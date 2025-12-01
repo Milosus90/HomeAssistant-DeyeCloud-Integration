@@ -1,0 +1,10 @@
+{
+  "title": "DeyeCloud",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to DeyeCloud"
+      }
+    }
+  }
+}
