@@ -44,10 +44,7 @@ async def _async_get_token(session: aiohttp.ClientSession, username, password, a
     payload = {
         "appSecret": app_secret,
         "email": username,
-        # CORRECCIÓN: Usar la contraseña original o hash según lo espere la API
-        "password": password, 
-        # Si la API espera el hash (como en el archivo que me enviaste):
-        # "password": _sha256(password),
+        "password": _sha256(password),
     }
     # Usamos la sesión pasada como argumento (la sesión gestionada por HA)
     async with session.post(url, json=payload, timeout=10) as resp:

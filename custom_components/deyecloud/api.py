@@ -16,7 +16,7 @@ async def async_get_token(session: aiohttp.ClientSession, username, password, ap
     payload = {
         "appSecret": app_secret,
         "email": username,
-        "password": password,
+        "password": _sha256(password),
     }
     
     try:
